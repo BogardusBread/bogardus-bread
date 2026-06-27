@@ -4,22 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bogardus Bread</title>
-
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Georgia, serif;
-      background: #f8f1e7;
-      color: #2f2018;
+      background: #f8f1e8;
+      color: #2d1d14;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
 
     header {
       min-height: 100vh;
       background:
-        linear-gradient(rgba(30,20,15,.45), rgba(30,20,15,.55)),
+        linear-gradient(rgba(35, 24, 18, .45), rgba(35, 24, 18, .5)),
         url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80");
       background-size: cover;
       background-position: center;
@@ -33,14 +32,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 28px 7%;
-      letter-spacing: 2px;
       text-transform: uppercase;
+      letter-spacing: 2px;
       font-size: .8rem;
     }
 
-    .logo { font-size: 1.2rem; }
-
-    nav a { margin-left: 28px; }
+    nav a { margin-left: 24px; }
 
     .hero {
       flex: 1;
@@ -52,24 +49,23 @@
     }
 
     .hero h1 {
-      font-size: clamp(4rem, 10vw, 9rem);
+      font-size: clamp(4rem, 11vw, 9rem);
       line-height: .85;
       letter-spacing: 4px;
-      margin-bottom: 24px;
     }
 
     .hero p {
+      margin-top: 24px;
+      font-size: 1.4rem;
       font-style: italic;
-      font-size: 1.5rem;
-      margin-bottom: 34px;
     }
 
     .btn {
       display: inline-block;
-      background: #8a5a32;
+      margin-top: 32px;
+      padding: 15px 32px;
+      background: #8b5e34;
       color: white;
-      padding: 15px 34px;
-      border-radius: 0;
       text-transform: uppercase;
       letter-spacing: 2px;
       font: bold .75rem Arial, sans-serif;
@@ -86,19 +82,19 @@
       align-items: center;
     }
 
-    h2 {
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
-      line-height: 1;
-      margin-bottom: 24px;
-      font-weight: normal;
-    }
-
     .eyebrow {
+      font: bold .75rem Arial, sans-serif;
       text-transform: uppercase;
       letter-spacing: 3px;
-      font: bold .75rem Arial, sans-serif;
-      color: #8a5a32;
+      color: #8b5e34;
       margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 24px;
     }
 
     p {
@@ -107,16 +103,14 @@
       max-width: 620px;
     }
 
-    .sage {
-      background: #d8dfc8;
-    }
+    .sage { background: #dce4cf; }
 
-    .card-note {
-      background: #fffaf1;
-      padding: 42px;
-      border: 1px solid #c8a77d;
-      box-shadow: 0 20px 40px rgba(47,32,24,.12);
-      transform: rotate(-1.5deg);
+    .arch-img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 220px 220px 0 0;
+      box-shadow: 0 25px 60px rgba(45, 29, 20, .18);
     }
 
     .menu {
@@ -132,18 +126,16 @@
 
     .item {
       background: #fffaf1;
-      padding: 20px;
       border: 1px solid #dfc9a9;
+      padding: 20px;
       transition: .25s;
     }
 
-    .item:hover {
-      transform: translateY(-8px);
-    }
+    .item:hover { transform: translateY(-8px); }
 
     .item img {
       width: 100%;
-      height: 220px;
+      height: 230px;
       object-fit: cover;
       margin-bottom: 20px;
     }
@@ -157,60 +149,76 @@
 
     .price {
       margin-top: 14px;
-      color: #8a5a32;
+      color: #8b5e34;
       font-weight: bold;
     }
 
     .august {
-      background:
-        linear-gradient(135deg, #f7e4b5, #c78950, #7b4a2b);
+      background: linear-gradient(135deg, #f6dfa8, #c47a45, #6f3c25);
       color: white;
       text-align: center;
     }
 
-    .august h2 {
-      max-width: 850px;
-      margin: 0 auto 24px;
+    .august p { margin: 0 auto; }
+
+    .reminder {
+      background: #fffaf1;
     }
 
-    .bread-club {
-      background: #2f2018;
-      color: #f8f1e7;
+    .quote-card {
+      background: #f8f1e8;
+      border: 2px solid #b8c4a5;
+      padding: 44px;
+      max-width: 760px;
+      margin: 0 auto;
+      box-shadow: 0 25px 50px rgba(45, 29, 20, .12);
+      transform: rotate(-1deg);
+    }
+
+    blockquote {
+      font-size: 1.45rem;
+      line-height: 1.6;
+      font-style: italic;
+      margin-top: 24px;
+    }
+
+    .credit {
+      margin-top: 18px;
+      text-align: right;
+      color: #8b5e34;
+    }
+
+    .club {
+      background: #2d1d14;
+      color: #f8f1e8;
       text-align: center;
     }
+
+    .club p { margin: 0 auto; }
 
     input {
-      padding: 16px;
-      width: min(400px, 90%);
-      border: 1px solid #d6b98c;
-      background: transparent;
-      color: white;
       margin-top: 28px;
+      padding: 16px;
+      width: min(420px, 90%);
+      background: transparent;
+      border: 1px solid #d9bd91;
+      color: white;
     }
 
     footer {
-      padding: 45px 8%;
-      background: #1f1510;
-      color: #f8f1e7;
+      background: #1d120d;
+      color: #f8f1e8;
+      padding: 42px 8%;
       display: flex;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
       flex-wrap: wrap;
-      font-size: .85rem;
-      letter-spacing: 2px;
       text-transform: uppercase;
-    }
-
-    .tiny {
+      letter-spacing: 2px;
       font-size: .8rem;
-      opacity: .75;
-      margin-top: 18px;
     }
 
-    .cone {
-      font-size: 1.4rem;
-      margin-top: 18px;
-    }
+    .tiny { opacity: .7; font-size: .85rem; margin-top: 16px; }
 
     @media (max-width: 800px) {
       .split { grid-template-columns: 1fr; }
@@ -225,12 +233,11 @@
 
 <header>
   <nav>
-    <div class="logo">Bogardus Bread</div>
+    <strong>Bogardus Bread</strong>
     <div>
       <a href="#story">Story</a>
       <a href="#menu">Menu</a>
       <a href="#club">Bread Club</a>
-      <a href="mailto:hello@bogardusbread.com">Order</a>
     </div>
   </nav>
 
@@ -254,34 +261,22 @@
     </p>
   </div>
 
-  <div class="card-note">
-    <div class="eyebrow">Kitchen Note</div>
-    <p>
-      Sometimes life is complicated. Fresh bread helps.
-    </p>
-    <p class="tiny">
-      A little reminder from the Bogardus kitchen.
-    </p>
-    <div class="cone">△ ✦ ♡</div>
+  <div>
+    <img class="arch-img" src="https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=900&q=80" alt="Fresh bread on a table">
   </div>
 </section>
 
 <section class="sage split">
   <div>
-    <img
-      src="https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=900&q=80"
-      alt="Fresh bread"
-      style="width:100%; border-radius: 160px 160px 0 0;"
-    />
+    <img class="arch-img" src="https://images.unsplash.com/photo-1600626333389-70a9a678f064?auto=format&fit=crop&w=900&q=80" alt="Bakery bread">
   </div>
 
   <div>
     <div class="eyebrow">The Vibe</div>
     <h2>Warm, golden, and made to bring people in.</h2>
     <p>
-      Think morning light, flour on the counter, glass cookie jars,
-      sage green details, wooden shelves, and loaves that make everyone
-      gather around the table.
+      Think morning light, flour on the counter, glass cookie jars, sage green
+      details, wooden shelves, and loaves that make everyone gather around the table.
     </p>
   </div>
 </section>
@@ -317,26 +312,42 @@
 <section class="august">
   <div class="eyebrow" style="color:white;">August Batch</div>
   <h2>Golden dough, warm flour, and late-summer light.</h2>
-  <p style="margin: 0 auto;">
+  <p>
     A soft ombré moment for the bakers, the dreamers, and everyone who
     believes fresh bread can fix at least a little bit of the day.
   </p>
 </section>
 
-<section id="club" class="bread-club">
-  <div class="eyebrow" style="color:#d6b98c;">Join</div>
+<section class="reminder">
+  <div class="quote-card">
+    <div class="eyebrow">A Little Reminder</div>
+    <p>
+      Every loaf we make is meant to be shared—with family, with friends,
+      or with someone who simply needs a warm slice of bread.
+    </p>
+
+    <blockquote>
+      “Sometimes life is really complicated but then you eat a cookie and you say is it really that serious?”
+    </blockquote>
+
+    <p class="credit">— Conan Gray</p>
+  </div>
+</section>
+
+<section id="club" class="club">
+  <div class="eyebrow" style="color:#d9bd91;">Join</div>
   <h2>The Bread Club</h2>
-  <p style="margin:0 auto;">
+  <p>
     Weekly menus, loaf drops, kitchen notes, and tiny bakery updates.
   </p>
 
   <form>
     <input type="email" placeholder="your email" />
-    <br><br>
+    <br>
     <button class="btn" type="submit">Join the Club</button>
   </form>
 
-  <p class="tiny">Coneheads welcome. Quietly. ♡</p>
+  <p class="tiny">Coneheads welcome. Quietly. △ ✦ ♡</p>
 </section>
 
 <footer>
